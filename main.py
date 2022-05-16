@@ -68,6 +68,25 @@ while True:
         break
     except Exception:
         valid()
+if autocheck == "y":
+    while True:
+        autowehook = input("Want Send Valid Codes To An Webhook (y/n): ")
+        if autowehook == "y" or autowehook == "n":
+            break
+        else:
+            valid()
+    if autowehook == "y":
+        while True:
+            try:
+                webhook = input("Enter Webhook: ")
+                re = requests.get(webhook)
+                re = str(re)
+                if "200" in re:
+                    break
+                else:
+                    print("Webhook Is Invalid")
+            except Exception:
+                print("Webhook Invalid")
 if autocheck == "n":
     choices = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     done = 0
@@ -100,7 +119,6 @@ if autocheck == "n":
             input("")
             exit()
         time.sleep(float(delay))
-
 if autocheck == "y":
     choices = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     done = 0
@@ -131,6 +149,15 @@ if autocheck == "y":
                 file = open("valid_nitro_codes.txt", "a")
                 file.writelines("https://discord.gift/"+code+"\n")
                 file.close()
+            while True:
+                r2 = requests.post(webhook, json={"username": "Nitro Sniper", "content": "@everyone **Sniped A New Code:** "+code})
+                r2 = str(r2)
+                if "204" in r2:
+                    print("Sent Code To Webhook")
+                    break
+                else:
+                    print("Ratelimited, Retrying...")
+
         if "200" not in r1:
             print(colorama.Fore.RED + f"[{str(done)}] Generated Invalid Code: https://discord.gift/" + code)
             if save == "y":
