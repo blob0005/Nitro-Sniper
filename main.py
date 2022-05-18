@@ -9,7 +9,6 @@ except Exception:
 try:
     import colorama
 except Exception:
-    print("e")
     colorerror = True
     anyerror = True
 
@@ -63,7 +62,7 @@ while True:
         valid()
 while True:
     try:
-        limit = input("Enter Limit: ")
+        limit = input("Enter Amount To Generate/Check: ")
         limit = int(limit)
         break
     except Exception:
