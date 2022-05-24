@@ -1,4 +1,4 @@
-# Nitro-Sniper-Gen
+# Nitro-Sniper
 
 Setup:
 
