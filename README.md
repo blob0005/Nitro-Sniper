@@ -1,4 +1,4 @@
-# Roblox-5-Letter-Username-Sniper
+# Nitro-Sniper-Gen
 
 Setup:
 
