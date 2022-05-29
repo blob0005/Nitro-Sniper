@@ -2,6 +2,12 @@ reqerror = False
 colorerror = False
 anyerror = False
 try:
+    import os
+    from os import system
+    system("title " + "Nitro Sniper")
+except:
+    pass
+try:
     import requests
 except Exception:
     reqerror = True
