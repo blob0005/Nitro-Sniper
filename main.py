@@ -96,23 +96,8 @@ if autocheck == "n":
     choices = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     done = 0
     while True: 
-        n1 = random.choice(choices)
-        n2 = random.choice(choices)
-        n3 = random.choice(choices)
-        n4 = random.choice(choices)
-        n5 = random.choice(choices)
-        n6 = random.choice(choices)
-        n7 = random.choice(choices)
-        n8 = random.choice(choices)
-        n9 = random.choice(choices)
-        n10 = random.choice(choices)
-        n11 = random.choice(choices)
-        n12 = random.choice(choices)
-        n13 = random.choice(choices)
-        n14 = random.choice(choices)
-        n15 = random.choice(choices)
-        n16 = random.choice(choices)
-        code = f"{n1}{n2}{n3}{n4}{n5}{n6}{n7}{n8}{n9}{n10}{n11}{n12}{n13}{n14}{n15}{n16}"
+        nn = random.choices(choices, k=16)
+        code = "".join(nn)
         done = int(done) + 1 
         print(f"[{str(done)}] Generated Code: https://discord.gift/" + code)
         if save == "y":
@@ -128,23 +113,8 @@ if autocheck == "y":
     choices = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     done = 0
     while True: 
-        n1 = random.choice(choices)
-        n2 = random.choice(choices)
-        n3 = random.choice(choices)
-        n4 = random.choice(choices)
-        n5 = random.choice(choices)
-        n6 = random.choice(choices)
-        n7 = random.choice(choices)
-        n8 = random.choice(choices)
-        n9 = random.choice(choices)
-        n10 = random.choice(choices)
-        n11 = random.choice(choices)
-        n12 = random.choice(choices)
-        n13 = random.choice(choices)
-        n14 = random.choice(choices)
-        n15 = random.choice(choices)
-        n16 = random.choice(choices)
-        code = f"{n1}{n2}{n3}{n4}{n5}{n6}{n7}{n8}{n9}{n10}{n11}{n12}{n13}{n14}{n15}{n16}"
+        nn = random.choices(choices, k=16)
+        code = "".join(nn)
         r1 = requests.get("https://discordapp.com/api/v6/entitlements/gift-codes/" + code + "?with_application=false&with_subscription_plan=true")
         r1 = str(r1)
         done = int(done) + 1
